@@ -1,343 +1,66 @@
 /* style.css */
+
 body {
-    font-family: 'IBM Plex Sans KR', sans-serif;
-    background-color: #1a1a2e; /* Dark Navy */
-    color: #fff;
     margin: 0;
-    overflow-x: hidden;
-    cursor: crosshair;
-}
-
-.game-container {
-    position: relative;
-    width: 100%;
-    padding-top: 50px; /* 캐릭터를 위한 공간 */
-}
-
-/* Starfield Background */
-#starfield {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-/* --- Player (Character) --- */
-#player {
-    position: fixed;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 60px;
-    background-color: #e94560; /* Neon Pink */
-    border: 2px solid #0f3460; /* Dark Blue */
-    box-shadow: 0 0 10px #e94560;
-    z-index: 100;
-    transition: transform 0.3s ease-out;
-    cursor: pointer;
-}
-
-/* --- Bullet --- */
-.bullet {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: #0ff; /* Cyan */
-    border-radius: 50%;
-    box-shadow: 0 0 5px #0ff;
-    z-index: 99;
-}
-
-/* --- Pixel Characters (Decorative) --- */
-.pixel-character {
-    position: absolute;
-    width: 30px;
-    height: 40px;
-    background-color: #0f3460; /* Dark Blue */
-    border: 1px solid #0ff; /* Cyan */
-    box-shadow: 0 0 5px #0ff;
-    z-index: 50;
-}
-
-.char-1 {
-    top: 10%;
-    left: 10%;
-    background-color: #e94560;
-}
-
-.char-2 {
-    top: 20%;
-    right: 15%;
-    background-color: #0ff;
-}
-
-.char-3 {
-    top: 50%;
-    left: 5%;
-    background-color: #e94560;
-}
-
-.char-4 {
-    bottom: 10%;
-    right: 5%;
-    background-color: #0ff;
-}
-
-.char-5 {
-    top: 30%;
-    left: 20%;
-    background-color: #e94560;
-}
-
-/* --- Initial Screen --- */
-.intro-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.dialog-box {
-    background-color: rgba(15, 52, 96, 0.8); /* Dark Blue with transparency */
-    border: 2px solid #e94560; /* Neon Pink */
-    padding: 20px;
-    margin-bottom: 20px;
-    max-width: 80%;
-    min-height: 50px;
-    box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
-}
-
-#typing-text {
-    white-space: pre-wrap;
-    font-size: 1.5em; /* Increased font size */
-    font-weight: 700;
-}
-
-.scroll-prompt {
-    animation: blink 1.5s infinite;
-    font-weight: 700;
-    color: #0ff;
-    font-size: 1.2em; /* Increased font size */
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* --- Journey (Main Content) --- */
-#journey {
-    padding: 0; /* Removed top/bottom padding */
-    position: relative;
-    z-index: 10;
-}
-
-.stage {
-    min-height: 100vh;
-    padding: 50px 20px; /* Reduced padding */
-    border-bottom: 4px dashed rgba(255, 255, 255, 0.2);
-    text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s, transform 0.5s;
-}
-
-.stage.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    font-size: 3em; /* Increased font size */
-    margin-bottom: 30px; /* Reduced margin */
-    color: #0ff; /* Cyan */
-    text-shadow: 0 0 10px #0ff;
-}
-
-/* --- Career Section --- */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px; /* Reduced gap */
-    padding: 20px;
-}
-
-.timeline-item {
-    background-color: #0f3460; /* Dark Blue */
-    border: 2px solid #e94560; /* Neon Pink */
-    padding: 25px;
-    border-radius: 10px;
-    max-width: 700px;
-    text-align: left;
-    position: relative;
-    box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
-}
-
-.timeline-item h3 {
-    color: #0ff;
-    margin-top: 0;
-    font-size: 1.8em; /* Increased font size */
-}
-
-.timeline-item p {
-    margin-bottom: 5px;
-    font-size: 1.1em; /* Increased font size */
-}
-
-.timeline-item ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    padding-left: 0;
-}
-
-/* --- Projects Section --- */
-.terminals {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.terminal {
-    width: 220px; /* Increased size */
-    height: 220px; /* Increased size */
-    border: 3px solid #0ff; /* Cyan */
-    background-color: #010; /* Dark Green */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-.terminal:hover {
-    background-color: #030;
-    box-shadow: 0 0 25px #0ff;
-    transform: translateY(-10px);
-}
-
-.terminal h3 {
-    font-size: 1.8em; /* Increased font size */
-    color: #e94560; /* Neon Pink */
-    text-shadow: 0 0 5px #e94560;
-}
-
-/* --- Skills Section --- */
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted min-width */
-    gap: 15px;
-    justify-content: center;
-    max-width: 900px; /* Increased max-width */
-    margin: 0 auto;
-}
-
-.skill-icon {
-    background-color: #0f3460; /* Dark Blue */
-    padding: 12px 18px; /* Increased padding */
-    border: 2px solid #0ff; /* Cyan */
-    border-radius: 5px;
-    font-size: 1.1em; /* Increased font size */
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-}
-
-/* --- Footer (Contact) --- */
-footer {
-    background-color: #0f3460;
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 4px solid #e94560;
-}
-
-footer .contact-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5em;
-    margin: 0 20px;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-footer .contact-links a:hover {
-    color: #e94560; /* Neon Pink */
-    text-shadow: 0 0 10px #e94560;
-}
-
-footer p {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #aaa;
-}
-
-/* --- Project Modal --- */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 200;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    background-color: #0f3460; /* Dark Blue */
-    margin: 5% auto;
-    padding: 30px;
-    border: 3px solid #e94560; /* Neon Pink */
-    width: 80%;
-    max-width: 800px;
-    position: relative;
-    box-shadow: 0 0 20px rgba(233, 69, 96, 0.7);
-}
-
-.close-button {
-    color: #0ff;
-    float: right;
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-button:hover, .close-button:focus {
-    color: #fff;
-}
-
-#modal-achievements {
-    text-align: left;
-    list-style-type: '\25B6\FE0E '; /* ▶️ */
-    margin-left: 20px;
-    padding-left: 0;
-}
-
-#modal-achievements li {
-    margin-bottom: 8px;
-}
-
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.skills-list span {
+    font-family: 'Noto Sans KR', sans-serif;
     background-color: #1a1a2e; /* Dark Navy */
-    padding: 5px 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background-color: #0f3460; /* Dark Blue */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #0ff; /* Cyan */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #e94560; /* Neon Pink */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9em;
-    border: 1px solid #0ff;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #ff6b81; /* Lighter pink on hover */
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
 }
