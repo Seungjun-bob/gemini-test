@@ -7,7 +7,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #000;
-    font-family: 'Arial Black', Gadget, sans-serif;
+    font-family: 'Press Start 2P', cursive; /* Retro game font */
     color: #fff;
 }
 
@@ -51,36 +51,68 @@ body {
     z-index: 10;
 }
 
-/* Panel 1 */
-#panel1 {
-    background-color: #111;
-}
-.character.hero {
-    width: 80px;
-    height: 120px;
-    background-color: #00f; /* Blue hero */
+/* Pixel Art Characters */
+.pixel-hero {
+    width: 16px; /* Base pixel size */
+    height: 16px;
+    background-color: #00f; /* Blue */
     position: absolute;
     bottom: 20px;
     left: 20px;
-    border: 2px solid #fff;
+    box-shadow: 
+        0 16px #00f, /* Body */
+        0 32px #00f,
+        16px 0 #00f,
+        16px 16px #00f,
+        16px 32px #00f,
+        32px 0 #00f,
+        32px 16px #00f,
+        32px 32px #00f, /* Head */
+        16px -16px #00f,
+        32px -16px #00f,
+        24px -24px #00f; /* Example pixel art for a simple hero */
+    transform: scale(2); /* Scale up for visibility */
+    transform-origin: top left;
 }
-.threat {
-    width: 100px;
-    height: 100px;
-    background-color: #f00; /* Red threat */
+
+.pixel-threat {
+    width: 16px;
+    height: 16px;
+    background-color: #f00; /* Red */
     position: absolute;
     top: 30px;
     right: 30px;
-    border: 2px solid #fff;
+    box-shadow: 
+        0 16px #f00,
+        0 32px #f00,
+        16px 0 #f00,
+        16px 16px #f00,
+        16px 32px #f00,
+        32px 0 #f00,
+        32px 16px #f00,
+        32px 32px #f00, /* Example pixel art for a simple threat */
+        16px -16px #f00,
+        32px -16px #f00,
+        24px -24px #f00;
+    transform: scale(2);
+    transform-origin: top left;
+}
+
+/* Panel 1 */
+#panel1 {
+    background-color: #111;
 }
 
 /* Panel 2 */
 #panel2 {
     background-color: #333;
 }
-.character.hero.charge {
-    transform: translateX(50px) scale(1.2); /* Charging effect */
-    transition: transform 0.5s ease-out;
+.pixel-hero.hero-charge {
+    animation: charge 0.5s forwards;
+}
+@keyframes charge {
+    from { transform: translateX(0) scale(2); }
+    to { transform: translateX(100px) scale(2.2); }
 }
 .action-lines {
     position: absolute;
@@ -119,9 +151,12 @@ body {
 #panel4 {
     background-color: #111;
 }
-.character.hero.victorious {
-    transform: translateY(-20px) scale(1.1); /* Slight jump */
-    transition: transform 0.5s ease-out;
+.pixel-hero.hero-victorious {
+    animation: victorious 0.5s forwards;
+}
+@keyframes victorious {
+    from { transform: translateY(0) scale(2); }
+    to { transform: translateY(-20px) scale(2.1); }
 }
 
 #playPauseButton {
