@@ -1,66 +1,23 @@
 /* style.css */
-
 body {
     margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #1a1a2e; /* Dark Navy */
-    color: #fff;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    text-align: center;
+    background-color: #000;
 }
 
-.container {
-    background-color: #0f3460; /* Dark Blue */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
-    width: 90%;
+canvas {
+    display: block;
+    background-color: #333;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: #0ff; /* Cyan */
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-.project-links {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.button {
-    display: inline-block;
-    background-color: #e94560; /* Neon Pink */
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
+#playPauseButton {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
     font-size: 1.2em;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.button:hover {
-    background-color: #ff6b81; /* Lighter pink on hover */
-    transform: translateY(-3px);
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-    .button {
-        font-size: 1em;
-        padding: 12px 25px;
-    }
+    cursor: pointer;
 }
