@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Animation</title>
+    <title>Short Action Comic</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="animationCanvas"></canvas>
+    <div class="comic-container">
+        <div id="panel1" class="comic-panel">
+            <div class="character hero"></div>
+            <div class="threat"></div>
+            <p class="dialog">"어둠 속에서..."</p>
+        </div>
+        <div id="panel2" class="comic-panel">
+            <div class="character hero charge"></div>
+            <div class="action-lines"></div>
+            <p class="dialog">"결정의 순간!"</p>
+        </div>
+        <div id="panel3" class="comic-panel">
+            <div class="explosion"></div>
+            <p class="dialog">"콰앙!"</p>
+        </div>
+        <div id="panel4" class="comic-panel">
+            <div class="character hero victorious"></div>
+            <p class="dialog">"승리!"</p>
+        </div>
+    </div>
     <button id="playPauseButton">Play</button>
     <script src="script.js"></script>
 </body>
