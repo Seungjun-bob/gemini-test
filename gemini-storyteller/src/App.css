@@ -1,0 +1,149 @@
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif; /* Modern Korean font */
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light gray text */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.App-header {
+  background-color: #1e1e1e; /* Slightly lighter dark for header */
+  padding: 20px;
+  color: #ffffff; /* White for header text */
+  border-bottom: 1px solid #333333; /* Subtle border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  text-shadow: none; /* Remove text shadow for modern look */
+}
+
+.story-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  padding: 20px;
+  background-color: #121212; /* Ensure background covers */
+}
+
+.story-text-box {
+  background-color: #282828; /* Dark gray for text box */
+  border: 1px solid #444444; /* Lighter gray border */
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%; /* Ensure it takes full width up to max-width */
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px auto; /* Center horizontally with margin-bottom */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  position: relative;
+}
+
+.story-text {
+  font-size: 1.3em; /* Slightly larger font */
+  line-height: 1.8;
+  white-space: pre-wrap;
+  text-align: center;
+  color: #f0f0f0; /* Off-white for story text */
+  padding: 0 10px; /* Add some horizontal padding to prevent text from touching edges */
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink-caret .75s step-end infinite;
+  color: #ffffff;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff; }
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.choices button, .ai-response-box button {
+  background-color: #444444; /* Dark gray button */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.choices button:hover, .ai-response-box button:hover {
+  background-color: #555555; /* Lighter gray on hover */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.choices button:disabled {
+  background-color: #333333;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ai-response-box {
+  background-color: #282828; /* Dark gray for AI response box */
+  border: 1px solid #444444; /* Lighter gray border */
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.ai-response-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #cccccc; /* Slightly darker white for AI text */
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8em;
+  }
+  .story-text-box {
+    padding: 20px;
+    min-height: 120px;
+  }
+  .story-text {
+    font-size: 1em;
+  }
+  .choices button, .ai-response-box button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}

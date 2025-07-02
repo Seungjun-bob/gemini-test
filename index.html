@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강승준의 개발 여정 v2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    <div class="game-container">
+        <header class="intro-section">
+            <div id="player"></div>
+            <div class="dialog-box">
+                <p id="typing-text"></p>
+            </div>
+            <div class="scroll-prompt">
+                <p>[ SCROLL TO EXPLORE ]</p>
+            </div>
+            <div class="pixel-character char-1"></div>
+            <div class="pixel-character char-2"></div>
+        </header>
+
+        <main id="journey">
+            <section id="career-section" class="stage">
+                <h2>CAREER</h2>
+                <div class="timeline">
+                    <!-- 경력 타임라인이 여기에 동적으로 추가됩니다. -->
+                </div>
+                <div class="pixel-character char-3"></div>
+            </section>
+
+            <section id="projects-section" class="stage">
+                <h2>PROJECTS</h2>
+                <div class="terminals">
+                    <div class="terminal" data-project="samsung">
+                        <h3>삼성전자<br>데이터 대시보드</h3>
+                    </div>
+                    <div class="terminal" data-project="kia">
+                        <h3>KIA 멕시코<br>사내 시스템</h3>
+                    </div>
+                    <div class="terminal" data-project="gis">
+                        <h3>웹GIS<br>공경매 시스템</h3>
+                    </div>
+                </div>
+                <div class="pixel-character char-4"></div>
+            </section>
+
+            <section id="skills-section" class="stage">
+                <h2>SKILLS</h2>
+                <div class="skill-grid">
+                    <!-- 스킬 아이콘이 여기에 동적으로 추가됩니다. -->
+                </div>
+                <div class="pixel-character char-5"></div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="contact-links">
+                <a href="mailto:rkdtmdwns0105@gmail.com" id="email-link">EMAIL</a>
+                <a href="https://github.com/Seungjun-bob" id="github-link" target="_blank">GITHUB</a>
+                <a href="https://bob-data.tistory.com/" id="blog-link" target="_blank">BLOG</a>
+            </div>
+            <p>&copy; 2025 Kang Seung-jun. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- 프로젝트 상세 정보 모달 -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p><strong>기간:</strong> <span id="modal-period"></span></p>
+            <p><strong>역할:</strong> <span id="modal-role"></span></p>
+            <h4>주요 성과</h4>
+            <ul id="modal-achievements"></ul>
+            <h4>기술 스택</h4>
+            <div id="modal-skills" class="skills-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
